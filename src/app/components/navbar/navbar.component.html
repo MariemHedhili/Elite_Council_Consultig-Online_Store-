@@ -1,0 +1,25 @@
+<nav class="px-16 py-6 flex flex-row justify-between sticky" [ngClass]="{'drop-shadow-lg': isScrolled}">
+    <div class="flex flex-row items-center cursor-pointer" routerLink="">
+        <img class="w-12 h-12" src="./../../../assets/ECC.png" alt="ECC" />
+        <div class="bg-off-black w-[2px] h-10 mx-5"></div>
+        <h2 class="text-xl font-semibold">Elite Council Consulting</h2>
+    </div>
+    <div>
+        <ul class="nav-list">
+            <li class="nav-list-item" routerLink=""><a class="nav_list_a font-semibold">Accueil</a></li>
+            <li class="relative">
+                <a class="nav_list_a font-semibold">Nos Solutions Clés</a>
+                <ul class="nav_list_itemdrop rounded-xl bg-off-white transition-all">
+                    <li routerLink="Consulting-Technologique" class="rounded-xl hover:bg-off-white-darker transition-all">
+                        <a class="nav_drop_a font-semibold">Consulting Technologique</a>
+                    </li>
+                    <li routerLink="Solutions-Techniques" class="rounded-xl hover:bg-off-white-darker transition-all">
+                        <a class="nav_drop_a font-semibold">Solutions Techniques</a>
+                    </li>
+                </ul>
+            </li>
+            <li routerLink="About"><a class="nav_list_a font-semibold">À Propos</a></li>
+            <li class="ml-3" routerLink="Contact"><p class="btn-main">Contactez-Nous</p></li>
+        </ul>
+    </div>
+</nav>

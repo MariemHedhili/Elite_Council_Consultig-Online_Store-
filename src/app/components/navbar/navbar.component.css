@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    ul {
+        @apply list-none;
+    }
+    ul li {
+        @apply inline-block;
+    }
+    ul li a {
+        @apply block px-6 py-4 text-off-black text-center cursor-pointer;
+    }
+    ul li ul.nav_list_itemdrop li {
+        @apply rounded-md block;
+    } 
+    ul li ul.nav_list_itemdrop {
+        @apply w-full absolute z-50 hidden;
+    }
+    
+    ul li:hover ul.nav_list_itemdrop {
+        @apply block;
+    }
+    ul li a.nav_list_a {
+        @apply hover:text-main
+    }
+}
