@@ -1,22 +1,57 @@
-import { Component, HostListener } from '@angular/core';
+import { Component } from '@angular/core';
+
+interface Sublink {
+  name: string;
+  routerLink: string;
+}
+
+interface Link {
+  name: string;
+  routerLink: string;
+  subLinks: Sublink[];
+  isOpen: boolean;
+}
 
 @Component({
   selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css'],
+  templateUrl: './navbar.component.html'
 })
 export class NavbarComponent {
-  isScrolled: boolean = false;
-  @HostListener('window:scroll', ['$event'])
-  onWindowsScroll(event: Event) {
-    const scrollListener =
-      window.pageYOffset ||
-      document.documentElement.scrollTop ||
-      document.body.scrollTop;
-    if (scrollListener > 0) {
-      this.isScrolled = true;
-    } else {
-      this.isScrolled = false;
+  isMobileMenuOpen = false;
+  links: Link[] = [
+    {
+      name: 'Home',
+      routerLink: '/',
+      subLinks: [],
+      isOpen: false
+    },
+    {
+      name: 'Nos Solutions',
+      routerLink: '',
+      subLinks: [
+        { name: 'Consulting Technologique', routerLink: 'Consulting-Technologique' },
+        { name: 'Solutions Techniques', routerLink: 'Solutions-Techniques' }
+      ],
+      isOpen: false
+    },
+    {
+      name: 'À Propos',
+      routerLink: 'About',
+      subLinks: [],
+      isOpen: false
     }
+
+  ];
+
+  toggleMobileMenu(): void {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+
+  toggleDropdown(link: Link): void {
+    link.isOpen = !link.isOpen;
+  }
+
+  toggleMobileDropdown(link: Link): void {
+    link.isOpen = !link.isOpen;
   }
 }
