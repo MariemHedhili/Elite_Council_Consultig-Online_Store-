@@ -1,5 +1,12 @@
-<div class="bg-white p-8 rounded text-center shadow-md ring-2 ring-main hover:-translate-y-6 hover:drop-shadow-xl transition-all">
-  <div [innerHTML]="safeSvg" class="flex justify-center pb-6"></div>
-  <h3 class="text-lg font-semibold">{{ card.title }}</h3>
-  <p class="text-off-gray">{{ card.description }}</p> 
+<div
+  [id]="'card-' + cardIndex"
+  class="card p-6 bg-white rounded shadow-md transition-opacity duration-500 transform ring-2 ring-main my-8 w-full"
+  [class.opacity-100]="isVisible"
+  [class.translate-y-0]="isVisible"
+  [class.opacity-0]="!isVisible"
+  [class.-translate-y-6]="!isVisible"
+>
+  <div [innerHTML]="safeSvg" class="w-32 h-32 mx-auto mb-4"></div>
+  <h3 class="text-xl font-semibold mb-2">{{ card.title }}</h3>
+  <p class="text-off-black">{{ card.description }}</p>
 </div>

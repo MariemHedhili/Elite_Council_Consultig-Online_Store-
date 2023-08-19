@@ -19,12 +19,29 @@
     opacity: 0;
     visibility: hidden;
     height: 0;
-    transition: opacity 0.5s ease-in-out, visibility 0s linear 0.5s, height 0s linear 0.5s;
+    
   }
   
   .opacity-100 {
     opacity: 1;
     visibility: visible;
     height: auto;
-    transition: opacity 0.5s ease-in-out, visibility 0s linear, height 0s linear;
+    
   }
+  
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 1s ease forwards;
+  }
+  
