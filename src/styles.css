@@ -6,7 +6,7 @@
 
 @layer components {
     .btn-main {
-        @apply bg-main hover:bg-main-dark text-off-white font-semibold rounded-full py-3 px-5 text-base hover:drop-shadow-lg transition-all;
+        @apply bg-main hover:bg-main-dark text-off-white font-semibold rounded-sm py-3 px-5 text-base hover:drop-shadow-lg transition-all;
     }
 }
 

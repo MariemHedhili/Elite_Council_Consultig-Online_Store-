@@ -12,5 +12,5 @@ export interface ServiceContent {
 })
 export class ServiceCardComponent {
   @Input() content!: ServiceContent;
-  @Input() index!: number; //
+  @Input() index!: number;
 }
