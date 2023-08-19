@@ -12,6 +12,8 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { HeroComponent } from './pages/home/hero/hero.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ServicesComponent } from './pages/home/services/services.component';
+import { ServiceCardComponent } from './pages/home/service-card/service-card.component';
+import { ServiceCardAlternativeComponent } from './pages/home/service-card-alternative/service-card-alternative.component';
 
 
 @NgModule({
@@ -26,6 +28,8 @@ import { ServicesComponent } from './pages/home/services/services.component';
     HeroComponent,
     NotFoundComponent,
     ServicesComponent,
+    ServiceCardComponent,
+    ServiceCardAlternativeComponent,
   ],
   imports: [
     BrowserModule,

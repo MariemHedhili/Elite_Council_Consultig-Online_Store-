@@ -1,3 +1,7 @@
-<div class="w-full h-full bg-main-dark flex flex-row py-20 px-56">
+<div class="w-full h-full bg-main-dark flex flex-col py-20 px-56">
     <h1 class="mx-auto text-3xl text-off-white font-bold">Nos Services</h1>
+    <div *ngFor="let service of serviceContents; let i = index">
+        <app-service-card *ngIf="i%2==0" [content]="service" [index]="i"></app-service-card>
+        <app-service-card-alternative *ngIf="i%2!=0" [content]="service" [index]="i"></app-service-card-alternative>
+    </div>
 </div>
