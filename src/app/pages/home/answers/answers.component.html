@@ -1,1 +1,21 @@
-<p>answers works!</p>
+<div class="py-10">
+  <h1 class="text-5xl font-black text-center p-20 px-40">
+    Pourquoi Choisir Elite Council Consulting?
+  </h1>
+
+  <div class="mx-auto px-10">
+    <div class="relative h-full ">
+      <div *ngFor="let card of cards; let i = index" class="transition-all duration-500 w-screen mx-auto "
+        [class.opacity-0]="i !== currentCardIndex" [class.opacity-100]="i === currentCardIndex"
+        style="width: 80%; max-width: 800px">
+        <app-answers-card [card]="card" class=""></app-answers-card>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="p-20 px-40 lg:px-80 text-center font-semibold text-xl">
+    Explorez notre univers pour transformer vos défis en opportunités et bâtir
+    un futur florissant. Découvrez nos services, explorez nos projets passés et
+    contactez-nous pour une aventure vers le succès.
+  </h2>
+</div>

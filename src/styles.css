@@ -14,3 +14,17 @@
     font-family: 'Poppins', sans-serif;
     color: #0D0D0D;
 }
+
+.opacity-0 {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    transition: opacity 0.5s ease-in-out, visibility 0s linear 0.5s, height 0s linear 0.5s;
+  }
+  
+  .opacity-100 {
+    opacity: 1;
+    visibility: visible;
+    height: auto;
+    transition: opacity 0.5s ease-in-out, visibility 0s linear, height 0s linear;
+  }

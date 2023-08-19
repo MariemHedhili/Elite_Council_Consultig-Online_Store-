@@ -3,7 +3,6 @@ import { Component, Input } from '@angular/core';
 export interface ServiceContent {
   title: string;
   description: string;
-  img: string;
 }
 
 @Component({

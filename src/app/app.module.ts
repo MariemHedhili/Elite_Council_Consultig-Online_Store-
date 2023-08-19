@@ -14,6 +14,10 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ServicesComponent } from './pages/home/services/services.component';
 import { ServiceCardComponent } from './pages/home/service-card/service-card.component';
 import { AnswersComponent } from './pages/home/answers/answers.component';
+import { AnswersCardComponent } from './pages/home/answers-card/answers-card.component';
+import { SolutionsLogiciellesComponent } from './pages/solutions-techniques/solutions-logicielles/solutions-logicielles.component';
+import { SolutionsMateriellesComponent } from './pages/solutions-techniques/solutions-materielles/solutions-materielles.component';
+
 
 @NgModule({
   declarations: [
@@ -29,6 +33,9 @@ import { AnswersComponent } from './pages/home/answers/answers.component';
     ServicesComponent,
     ServiceCardComponent,
     AnswersComponent,
+    AnswersCardComponent,
+    SolutionsLogiciellesComponent,
+    SolutionsMateriellesComponent,
   ],
   imports: [
     BrowserModule,
