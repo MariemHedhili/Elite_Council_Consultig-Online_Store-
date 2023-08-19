@@ -13,6 +13,7 @@ import { HeroComponent } from './pages/home/hero/hero.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ServicesComponent } from './pages/home/services/services.component';
 import { ServiceCardComponent } from './pages/home/service-card/service-card.component';
+import { AnswersComponent } from './pages/home/answers/answers.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ServiceCardComponent } from './pages/home/service-card/service-card.com
     NotFoundComponent,
     ServicesComponent,
     ServiceCardComponent,
+    AnswersComponent,
   ],
   imports: [
     BrowserModule,
