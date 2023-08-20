@@ -2,46 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @layer components {
-    .btn-main {
-        @apply bg-main hover:bg-main-dark text-off-white font-semibold rounded-sm py-3 px-5 text-base hover:drop-shadow-lg transition-all;
-    }
+  .btn-main {
+    @apply bg-main hover:bg-main-dark text-off-white font-semibold rounded-sm py-3 px-5 text-base hover:drop-shadow-lg transition-all;
+  }
 }
 
 * {
-    font-family: 'Poppins', sans-serif;
-    color: #0D0D0D;
+  font-family: "Poppins", sans-serif;
+  color: #0d0d0d;
 }
 
 .opacity-0 {
-    opacity: 0;
-    visibility: hidden;
-    height: 0;
-    
-  }
-  
-  .opacity-100 {
-    opacity: 1;
-    visibility: visible;
-    height: auto;
-    
-  }
-  
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+}
 
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+.opacity-100 {
+  opacity: 1;
+  visibility: visible;
+  height: auto;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  .animate-fade-in {
-    animation: fade-in 1s ease forwards;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease forwards;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #83C9EE;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #53AFE2;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #DFDFDF;
+  border-radius: 8px;
+}
+
+
+.scrollbar-custom {
+  scrollbar-color: #CBD5E0 #53AFE2;
+}

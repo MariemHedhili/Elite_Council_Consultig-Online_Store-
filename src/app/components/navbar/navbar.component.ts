@@ -20,7 +20,7 @@ export class NavbarComponent {
   isMobileMenuOpen = false;
   links: Link[] = [
     {
-      name: 'Home',
+      name: 'Accueil',
       routerLink: '/',
       subLinks: [],
       isOpen: false
