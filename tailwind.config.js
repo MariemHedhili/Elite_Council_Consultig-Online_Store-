@@ -1,5 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  variants: {
+    display: ['responsive', 'group-hover', 'group-focus'],
+   },
   content: [
     "./src/**/*.{html,ts}",
   ],

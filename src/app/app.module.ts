@@ -20,6 +20,10 @@ import { ProfileCardsComponent } from './components/profile-cards/profile-cards.
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './components/footer/footer.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { ScrollButtonComponent } from './scroll-button/scroll-button.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +44,10 @@ import { FooterComponent } from './components/footer/footer.component';
     SolutionsMateriellesComponent,
     ProfileCardsComponent,
     FooterComponent,
+    LoginComponent,
+    RegisterComponent,
+    DashboardComponent,
+    ScrollButtonComponent,
   ],
   imports: [
     BrowserModule,

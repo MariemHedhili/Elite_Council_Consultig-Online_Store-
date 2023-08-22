@@ -6,6 +6,9 @@ import { SolutionsTechniquesComponent } from './pages/solutions-techniques/solut
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 const routes: Routes = [
   {
@@ -27,6 +30,21 @@ const routes: Routes = [
   {
     path: 'Contact',
     component: ContactComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    children: [
+      
+    ]
   },
   {
     path: '**',

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ScrollService } from 'src/app/scroll.service';
 
 interface Sublink {
   name: string;
@@ -43,6 +44,8 @@ export class NavbarComponent {
 
   ];
 
+  constructor(private scrollService: ScrollService) {}
+
   toggleMobileMenu(): void {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }
@@ -54,4 +57,5 @@ export class NavbarComponent {
   toggleMobileDropdown(link: Link): void {
     link.isOpen = !link.isOpen;
   }
+
 }
