@@ -6,13 +6,12 @@
 
 @layer components {
   .btn-main {
-    @apply bg-main hover:bg-main-dark text-off-white font-semibold rounded-sm py-3 px-5 text-base hover:drop-shadow-lg transition-all;
+    @apply bg-main hover:bg-main-dark text-off-white font-semibold rounded-md py-3 px-5 text-base hover:drop-shadow-lg transition-all;
   }
 }
 
 * {
   font-family: "Poppins", sans-serif;
-  color: #0d0d0d;
 }
 
 .opacity-0 {
@@ -64,4 +63,11 @@
 
 .scrollbar-custom {
   scrollbar-color: #CBD5E0 #53AFE2;
+}
+
+.dark {
+  @import 'tailwindcss/utilities.css';
+  @media (prefers-color-scheme: dark) {
+    @import 'tailwindcss/dark.css';
+  }
 }

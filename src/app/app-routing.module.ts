@@ -32,15 +32,15 @@ const routes: Routes = [
     component: ContactComponent
   },
   {
-    path: 'login',
+    path: 'Login',
     component: LoginComponent
   },
   {
-    path: 'register',
+    path: 'Register',
     component: RegisterComponent
   },
   {
-    path: 'dashboard',
+    path: 'Dashboard',
     component: DashboardComponent,
     children: [
       

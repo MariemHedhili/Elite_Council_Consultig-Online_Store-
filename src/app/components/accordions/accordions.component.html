@@ -1,0 +1,6 @@
+<div class="p-20 bg-off-white dark:bg-dark-mode-two">
+    <h1 class="mb-20 text-center text-5xl font-black text-off-black dark:text-off-white">Questions Fréquemment Posées</h1>
+    <div *ngFor="let item of accordionItems; let i = index">
+        <app-accordion-item [title]="item.title" [description]="item.description" [isOpen]="item.open" (toggle)="toggleAccordion(i)"></app-accordion-item>
+    </div>
+</div>

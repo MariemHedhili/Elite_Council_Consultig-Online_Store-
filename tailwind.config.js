@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   variants: {
     display: ['responsive', 'group-hover', 'group-focus'],
    },
@@ -16,9 +17,11 @@ module.exports = {
         'main-dark': '#309CD6',
         'main-light': '#83C9EE',
         'off-black': '#121212',
-        'off-gray': '#0D0D0D',
+        'off-gray': '#1d1d1d',
         'off-white': '#FAFAFA',
-        'off-white-darker': '#DFDFDF',
+        'off-white-darker': '#eeeeee',
+        'dark-mode-one': '#152642',
+        'dark-mode-two': '#172b4a',
       },
       transitionDuration: {
         '0': '0ms',

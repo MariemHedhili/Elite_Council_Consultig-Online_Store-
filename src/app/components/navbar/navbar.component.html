@@ -1,50 +1,62 @@
-<div class="flex flex-row py-2 px-10 md:px-20 justify-between items-center bg-off-white drop-shadow-md">
+
+
+
+<div class="sticky top-0 z-40 transition-all flex flex-row py-2 px-10 md:px-20 justify-between items-center bg-off-white dark:bg-dark-mode-one drop-shadow-md">
   <div class="flex flex-row items-center cursor-pointer" routerLink="">
     <img class="w-10 h-10" src="./../../../assets/ECC.png" alt="ECC" />
     <div class="hidden lg:flex items-center">
-      <div class="bg-off-black w-[2px] h-8 mx-5"></div>
-      <h2 class="text-lg font-semibold">Elite Council Consulting</h2>
+      <div class="bg-off-black w-[2px] h-8 mx-5 dark:bg-off-white"></div>
+      <h2 class="text-lg font-semibold dark:text-off-white">Elite Council Consulting</h2>
     </div>
+    
   </div>
+  
+
+  
 
   <div id="pc-navbar">
+    
     <nav class="">
       <div class="flex items-center justify-between">
+        
         <ul class="hidden  lg:flex space-x-4 lg:align-middle lg:justify-center items-center group">
+          <app-dark-mode-toggle></app-dark-mode-toggle>
           <li
             *ngFor="let link of links"
             class="relative group inline-block"
             (mouseenter)="link.isOpen = true"
             (mouseleave)="link.isOpen = false"
           >
+          
             <a
               *ngIf="!link.subLinks.length"
-              class="text-black hover:text-main transition-all mx-10"
+              class="text-off-black dark:text-off-white hover:text-main transition-all mx-10"
               [routerLink]="link.routerLink"
             >
               {{ link.name }}
             </a>
             <a
               *ngIf="link.subLinks.length"
-              class="text-black cursor-pointer  py-5 hover:text-main transition-all"
+              [routerLink]="link.routerLink"
+              class="text-black cursor-pointer dark:text-off-white py-5 hover:text-main transition-all"
             >
               {{ link.name }}
             </a>
             <div
               *ngIf="link.isOpen && link.subLinks.length"
-              class="group bg-off-white absolute text-white my-4 rounded-md transition-all"
+              class="group bg-off-white dark:bg-dark-mode-two absolute text-white  my-4 rounded-md transition-all"
               style="min-width: 300px; left: 50%; transform: translateX(-50%);"
             >
               <a
                 *ngFor="let sublink of link.subLinks"
                 [routerLink]="sublink.routerLink"
-                class="text-off-black py-4 px-6 hover:bg-off-white-darker rounded-md group-hover:block"
+                class="text-off-black dark:text-off-white py-4 px-6 hover:bg-off-white-darker dark:hover:bg-dark-mode-one rounded-md group-hover:block"
               >
                 {{ sublink.name }}
               </a>
             </div>
           </li>
-          <button class="btn-main py-2" routerLink="Contact">
+          <button class="btn-main py-2 " routerLink="Contact">
             Contactez-Nous
           </button>
         </ul>
@@ -56,7 +68,7 @@
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="w-6 h-6 z-40"
+            class="w-6 h-6 z-40 dark:stroke-off-white"
           >
             <path
               stroke-linecap="round"
@@ -74,8 +86,9 @@
 <div
       id="phone-navbar"
       *ngIf="isMobileMenuOpen"
-      class="z-50 fixed top-0 right-0 w-2/3 h-screen bg-off-white drop-shadow-lg text-off-black py-6 flex flex-col lg:hidden"
+      class="z-50 fixed top-0 right-0 w-2/3 h-screen bg-off-white dark:bg-dark-mode-one drop-shadow-lg text-off-black py-6 flex flex-col lg:hidden"
     >
+      
       <button class="self-end text-white text-xl" (click)="toggleMobileMenu()">
         <svg
           id="burger-close"
@@ -83,8 +96,8 @@
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
-          stroke="currentColor"
-          class="w-6 h-6 mr-10 md:mr-20"
+          stroke="black"
+          class="w-6 h-6 mr-10 md:mr-20 dark:stroke-off-white"
         >
           <path
             stroke-linecap="round"
@@ -93,28 +106,31 @@
           />
         </svg>
       </button>
+      <app-dark-mode-toggle class="mx-auto my-4"></app-dark-mode-toggle>
       <ng-container *ngFor="let link of links" >
+
+        
         <div class="text-center my-4">
           <a
             *ngIf="!link.subLinks.length; else mobileLinkWithDropdown"
-            class="mb-4 text-off-black"
+            class="mb-4 text-off-black dark:text-off-white"
             [routerLink]="link.routerLink"
           >
             {{ link.name }}
           </a>
           <ng-template #mobileLinkWithDropdown>
             <div class="group ">
-              <a class="cursor-pointer text-off-black " (click)="toggleMobileDropdown(link)">{{
+              <a class="cursor-pointer text-off-black dark:text-off-white" (click)="toggleMobileDropdown(link)">{{
                 link.name
               }}</a>
               <div
                 *ngIf="link.isOpen"
-                class="bg-main-darker text-off-black mt-6 w-full rounded-lg bg-off-white-darker"
+                class="bg-main-darker text-off-black mt-6 w-full rounded-lg bg-off-white-darker dark:bg-dark-mode-two"
               >
                 <a
                   *ngFor="let sublink of link.subLinks"
                   [routerLink]="sublink.routerLink"
-                  class="block py-4"
+                  class="block py-4 dark:text-off-white"
                 >
                   {{ sublink.name }}
                 </a>
@@ -127,3 +143,4 @@
           Contactez-Nous
       </button>
     </div>
+    

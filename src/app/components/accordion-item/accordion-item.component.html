@@ -1,0 +1,22 @@
+<div class="ring-1 ring-gray-300 dark:ring-main-dark p-4 my-2 bg-off-white-darker dark:bg-dark-mode-one" (click)="toggleAccordion()">
+  <div class="flex flex-row justify-between">
+    <div class="font-bold cursor-pointer text-lg text-off-black dark:text-off-white" >
+      {{ title }}
+    </div>
+
+    <div *ngIf="!isOpen" id="down-arrow">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path class="stroke-off-black dark:stroke-off-white" stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+      </svg>
+    </div>
+    <div *ngIf="isOpen" id="up-arrow">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path class="stroke-off-black dark:stroke-off-white" stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+      </svg>
+    </div>
+    
+  </div>
+  <div class="mt-2 text-off-gray dark:text-off-white p-4" [class.hidden]="!isOpen">
+    {{ description }}
+  </div>
+</div>

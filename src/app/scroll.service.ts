@@ -5,5 +5,12 @@ import { NavigationEnd, Router } from '@angular/router';
   providedIn: 'root'
 })
 export class ScrollService {
-  
+
+  constructor(private router: Router) {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        window.scrollTo(0, 0);
+      }
+    });
+  }
 }

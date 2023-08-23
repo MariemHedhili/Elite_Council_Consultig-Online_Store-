@@ -24,6 +24,10 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ScrollButtonComponent } from './scroll-button/scroll-button.component';
+import { FormsModule } from '@angular/forms';
+import { DarkModeToggleComponent } from './components/dark-mode-toggle/dark-mode-toggle.component';
+import { AccordionsComponent } from './components/accordions/accordions.component';
+import { AccordionItemComponent } from './components/accordion-item/accordion-item.component';
 
 @NgModule({
   declarations: [
@@ -48,12 +52,16 @@ import { ScrollButtonComponent } from './scroll-button/scroll-button.component';
     RegisterComponent,
     DashboardComponent,
     ScrollButtonComponent,
+    DarkModeToggleComponent,
+    AccordionsComponent,
+    AccordionItemComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

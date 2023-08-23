@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
+import { DarkModeService } from '../../our-services/dark-mode.service';
 import { ScrollService } from 'src/app/scroll.service';
 
 interface Sublink {
@@ -19,6 +20,7 @@ interface Link {
 })
 export class NavbarComponent {
   isMobileMenuOpen = false;
+
   links: Link[] = [
     {
       name: 'Accueil',
@@ -28,7 +30,7 @@ export class NavbarComponent {
     },
     {
       name: 'Nos Solutions',
-      routerLink: '',
+      routerLink: 'Solutions',
       subLinks: [
         { name: 'Consulting Technologique', routerLink: 'Consulting-Technologique' },
         { name: 'Solutions Techniques', routerLink: 'Solutions-Techniques' }
@@ -44,7 +46,7 @@ export class NavbarComponent {
 
   ];
 
-  constructor(private scrollService: ScrollService) {}
+  constructor(private scrollService: ScrollService, private darkModeService: DarkModeService, private cdr: ChangeDetectorRef) {}
 
   toggleMobileMenu(): void {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
@@ -56,6 +58,12 @@ export class NavbarComponent {
 
   toggleMobileDropdown(link: Link): void {
     link.isOpen = !link.isOpen;
+  }
+
+  toggleDarkMode() {
+    this.darkModeService.toggleDarkMode();
+    console.log(this.darkModeService.darkMode$)
+    this.cdr.detectChanges();
   }
 
 }
