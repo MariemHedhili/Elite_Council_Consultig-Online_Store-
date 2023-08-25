@@ -8,9 +8,5 @@ import { trigger, transition, style, animate } from '@angular/animations';
   
 })
 export class SolutionsLogiciellesComponent {
-  activePosition: number = 0; // Default active position
-
-  togglePosition() {
-    this.activePosition = (this.activePosition + 1) % 3;
-  }
+  
 }

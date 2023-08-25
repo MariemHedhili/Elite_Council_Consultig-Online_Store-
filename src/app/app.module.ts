@@ -29,9 +29,9 @@ import { DarkModeToggleComponent } from './components/dark-mode-toggle/dark-mode
 import { AccordionsComponent } from './components/accordions/accordions.component';
 import { AccordionItemComponent } from './components/accordion-item/accordion-item.component';
 import { MultiLevelNavbarComponent } from './components/multi-level-navbar/multi-level-navbar.component';
-import { WebComponent } from './pages/solutions-techniques/solutions-logicielles/web/web.component';
-import { CloudComponent } from './pages/solutions-techniques/solutions-logicielles/cloud/cloud.component';
-import { VpsComponent } from './pages/solutions-techniques/solutions-logicielles/vps/vps.component';
+import { WebComponent } from './pages/solutions-techniques/solutions-materielles/web/web.component';
+import { CloudComponent } from './pages/solutions-techniques/solutions-materielles/cloud/cloud.component';
+import { VpsComponent } from './pages/solutions-techniques/solutions-materielles/vps/vps.component';
 
 @NgModule({
   declarations: [

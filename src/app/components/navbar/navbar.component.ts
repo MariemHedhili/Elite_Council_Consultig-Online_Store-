@@ -24,32 +24,25 @@ export class NavbarComponent {
       isOpen: false,
     },
     {
-      name: 'Nos Solutions',
-      routerLink: '',
+      name: 'Consulting Technologique',
+      routerLink: 'Consulting-Technologique',
+      subLinks: [],
+      isOpen: false,
+    },
+    {
+      name: 'Solutions Techniques',
+      routerLink: 'Solutions-Techniques',
       subLinks: [
         {
-          name: 'Consulting Technologique',
-          routerLink: 'Consulting-Technologique',
+          name: 'Solutions Materielles',
+          routerLink: 'Solutions-Materielles',
           subLinks: [],
           isOpen: false,
         },
         {
-          name: 'Solutions Techniques',
-          routerLink: 'Solutions-Techniques',
-          subLinks: [
-            {
-              name: 'Solutions Materielles',
-              routerLink: 'Solutions-Materielles',
-              subLinks: [],
-              isOpen: false,
-            },
-            {
-              name: 'Solutions Logicielles',
-              routerLink: 'Solutions-Logicielles',
-              subLinks: [],
-              isOpen: false,
-            },
-          ],
+          name: 'Solutions Logicielles',
+          routerLink: 'Solutions-Logicielles',
+          subLinks: [],
           isOpen: false,
         },
       ],
@@ -89,20 +82,7 @@ export class NavbarComponent {
     this.cdr.detectChanges();
   }
 
-  toggleMobileDropdown(link: Link): void {
-    link.isOpen = !link.isOpen;
-    this.closeOtherSubLinks(link, this.links);
-  }
-
-  toggleSubDropdown(sublink: Link): void {
-    sublink.isOpen = !sublink.isOpen;
-    this.closeOtherSubLinks(sublink, this.links);
-  }
-
-  toggleSubSubDropdown(subsublink: Link): void {
-    subsublink.isOpen = !subsublink.isOpen;
-    this.closeOtherSubLinks(subsublink, this.links);
-  }
+  
 
   private closeOtherSubLinks(linkToKeepOpen: Link, linksArray: Link[]): void {
     linksArray.forEach((link) => {
@@ -116,5 +96,19 @@ export class NavbarComponent {
         });
       }
     });
+  }
+  toggleMobileDropdown(link: Link): void {
+    link.isOpen = !link.isOpen;
+    this.closeOtherSubLinks(link, this.links);
+  }
+
+  toggleSubDropdown(sublink: Link): void {
+    sublink.isOpen = !sublink.isOpen;
+    this.closeOtherSubLinks(sublink, this.links);
+  }
+
+  toggleSubSubDropdown(subsublink: Link): void {
+    subsublink.isOpen = !subsublink.isOpen;
+    // Remove the call to closeOtherSubLinks() here
   }
 }

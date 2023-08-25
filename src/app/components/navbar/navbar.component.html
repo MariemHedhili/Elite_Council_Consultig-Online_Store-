@@ -20,7 +20,7 @@
               [routerLink]="link.routerLink">
               {{ link.name }}
             </a>
-            <a *ngIf="link.subLinks.length" 
+            <a *ngIf="link.subLinks.length" [routerLink]="link.routerLink"
               class="text-black cursor-pointer dark:text-off-white py-5 hover:text-main transition-all mx-2"
               (click)="toggleMobileDropdown(link)">
               {{ link.name }}

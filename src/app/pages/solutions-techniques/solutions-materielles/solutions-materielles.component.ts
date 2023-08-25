@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./solutions-materielles.component.css']
 })
 export class SolutionsMateriellesComponent {
+  activePosition: number = 0; // Default active position
 
+  togglePosition() {
+    this.activePosition = (this.activePosition + 1) % 3;
+  }
 }

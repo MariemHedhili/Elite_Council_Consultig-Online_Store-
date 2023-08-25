@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
+import { DarkModeService } from 'src/app/our-services/dark-mode.service';
+import { ScrollService } from 'src/app/scroll.service';
 
 interface Link {
   name: string;
@@ -13,48 +15,106 @@ interface Link {
   styleUrls: ['./multi-level-navbar.component.css']
 })
 export class MultiLevelNavbarComponent {
+  isMobileMenuOpen = false;
+  isNavbarExpanded = false;
+
   links: Link[] = [
     {
-      name: 'Home',
-      routerLink: '/home',
+      name: 'Accueil',
+      routerLink: '/',
       subLinks: [],
-      isOpen: false
+      isOpen: false,
     },
     {
-      name: 'Products',
-      routerLink: '/products',
+      name: 'Nos Solutions',
+      routerLink: '',
       subLinks: [
         {
-          name: 'Product 1',
-          routerLink: '/products/1',
+          name: 'Consulting Technologique',
+          routerLink: 'Consulting-Technologique',
           subLinks: [],
-          isOpen: false
+          isOpen: false,
         },
         {
-          name: 'Product 2',
-          routerLink: '/products/2',
+          name: 'Solutions Techniques',
+          routerLink: 'Solutions-Techniques',
           subLinks: [
             {
-              name: 'Subproduct A',
-              routerLink: '/products/2/subproduct-a',
+              name: 'Solutions Materielles',
+              routerLink: 'Solutions-Materielles',
               subLinks: [],
-              isOpen: false
+              isOpen: false,
             },
             {
-              name: 'Subproduct B',
-              routerLink: '/products/2/subproduct-b',
+              name: 'Solutions Logicielles',
+              routerLink: 'Solutions-Logicielles',
               subLinks: [],
-              isOpen: false
-            }
+              isOpen: false,
+            },
           ],
-          isOpen: false
-        }
+          isOpen: false,
+        },
       ],
-      isOpen: false
-    }
+      isOpen: false,
+    },
+    {
+      name: 'À Propos',
+      routerLink: 'About',
+      subLinks: [],
+      isOpen: false,
+    },
+    {
+      name: 'Contactez-Nous',
+      routerLink: 'Contact',
+      subLinks: [],
+      isOpen: false,
+    },
   ];
 
-  toggleDropdown(link: Link, open: boolean): void {
-    link.isOpen = open;
+  constructor(
+    private scrollService: ScrollService,
+    private darkModeService: DarkModeService,
+    private cdr: ChangeDetectorRef
+  ) {}
+
+  toggleMobileMenu(): void {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+
+  toggleDropdown(link: Link): void {
+    link.isOpen = !link.isOpen;
+    if (link.isOpen) {
+      this.closeOtherSubLinks(link, this.links);
+    }
+  }
+
+  closeOtherSubLinks(linkToKeepOpen: Link, linksArray: Link[]): void {
+    linksArray.forEach((link) => {
+      if (link !== linkToKeepOpen) {
+        link.isOpen = false;
+        this.closeOtherSubLinks(linkToKeepOpen, link.subLinks);
+      }
+    });
+  }
+
+  closeMobileMenu(): void {
+    this.isMobileMenuOpen = false;
+    this.closeAllSubLinks(this.links);
+  }
+
+  toggleSubDropdown(sublink: Link): void {
+    if (this.isMobileMenuOpen) {
+      this.closeAllSubLinks(this.links);
+      sublink.isOpen = true;
+    } else {
+      sublink.isOpen = !sublink.isOpen;
+    }
+  }
+
+  private closeAllSubLinks(linksArray: Link[]): void {
+    linksArray.forEach((link) => {
+      link.isOpen = false;
+      this.closeAllSubLinks(link.subLinks);
+    });
   }
 }
