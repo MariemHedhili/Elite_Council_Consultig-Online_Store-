@@ -1,63 +1,84 @@
-<div class="mx-auto">
-    <h1 class="text-off-black dark:text-off-white font-black mx-auto text-center text-5xl max-w-6xl py-10">Hébergement Cloud - Évolutivité dans le Nuage :</h1>
-    <p class="text-off-gray dark:text-off-white-darker text-center font-semibold py-10">Exploitez les avantages du cloud. Solutions adaptées à vos besoins, flexibilité et évolutivité.</p>
+<div class="mx-auto px-10">
+  <h1 class="text-off-black dark:text-off-white font-black mx-auto text-center text-5xl max-w-6xl py-10">Hébergement
+    Cloud - Évolutivité dans le Nuage :</h1>
+  <p class="text-off-gray dark:text-off-white-darker text-center font-semibold py-10">Exploitez les avantages du cloud.Solutions adaptées à vos besoins, flexibilité et évolutivité.</p>
 </div>
 <div class="flex justify-center items-center py-10">
-    <div class="flex space-x-4">
-      <ng-container *ngFor="let plan of pricingPlans; let i = index">
-        <div class="bg-off dark:bg-dark-mode-three shadow-lg hover:shadow-2xl hover:shadow-main rounded-xl flex flex-col justify-between overflow-hidden w-96 hover:-translate-y-2 transition-all" [ngClass]="{'ml-4': i !== 0, 'ring-2 ring-main': plan.title == 'Cloud Plus'}">
-          <div class="px-6 py-6">
-            <h2 class="text-2xl font-semibold text-center text-off-black dark:text-off-white">{{ plan.title }}</h2>
-            <p class="mt-2 text-center text-off-gray dark:text-off-white-darker">Hébergement Partagé</p>
-            <p class="mt-4 text-3xl font-semibold text-center text-dark-mode-one dark:text-off-white">{{ plan.price }} DT<span class="text-base text-off-gray dark:text-off-white-darker">/Mois</span></p>
-          </div>
-          <div class="px-6 pt-4 pb-6 flex flex-col justify-between h-full">
-            <div>
-              <ul class="space-y-2">
-                <li class="flex items-center text-off-black dark:text-off-white">
-                  <span class="text-main mr-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                  </span>
-                  Espace de stockage: {{ plan.storage }}
-                </li>
-                <li class="flex items-center text-off-black dark:text-off-white">
-                  <span class="text-main mr-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                  </span>
-                  RAM: {{ plan.ram }}
-                </li>
-                <li class="flex items-center text-off-black dark:text-off-white">
-                  <span class="text-main mr-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                  </span>
-                  Processeur: {{ plan.processor }}
-                </li>
-                <li class="flex items-center text-off-black dark:text-off-white">
-                  <span class="text-main mr-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                  </span>
-                  Traffic mensuel: {{ plan.traffic }}
-                </li>
-                <li class="flex items-center text-off-black dark:text-off-white">
-                  <span class="text-main mr-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                  </span>
-                  Support technique: {{ plan.support }}
-                </li>
-                <li *ngIf="plan.certificat_ssl" class="flex items-center text-off-black dark:text-off-white">
-                  <span class="text-main mr-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                  </span>
-                  Certificat SSL: {{ plan.certificat_ssl }}
-                </li>
-              </ul>
-            </div>
-            <button class="btn-main mt-6 w-full">
-                Choisissez cette Offre
-            </button>
-          </div>
+  <div class="flex flex-col lg:flex-row">
+    <ng-container *ngFor="let plan of pricingPlans; let i = index">
+      <div
+        class="bg-off dark:bg-dark-mode-three shadow-lg hover:shadow-2xl lg:hover:shadow-main rounded-xl flex flex-col justify-between overflow-hidden w-96 my-5 lg:mx-5  lg:hover:-translate-y-2 transition-all "
+        [ngClass]="{'ring-2 ring-main': plan.title == 'Cloud Plus'}">
+        <div class="px-6 py-6">
+          <h2 class="text-2xl font-semibold text-center text-off-black dark:text-off-white">{{ plan.title }}</h2>
+          <p class="mt-2 text-center text-off-gray dark:text-off-white-darker">Hébergement Partagé</p>
+          <p class="mt-4 text-3xl font-semibold text-center text-dark-mode-one dark:text-off-white">{{ plan.price }}
+            DT<span class="text-base text-off-gray dark:text-off-white-darker">/Mois</span></p>
         </div>
-      </ng-container>
-    </div>
+        <div class="px-6 pt-4 pb-6 flex flex-col justify-between h-full">
+          <div>
+            <ul class="space-y-2">
+              <li class="flex items-center text-off-black dark:text-off-white">
+                <span class="text-main ">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </span>
+                Espace de stockage: {{ plan.storage }}
+              </li>
+              <li class="flex items-center text-off-black dark:text-off-white">
+                <span class="text-main mr-2">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </span>
+                RAM: {{ plan.ram }}
+              </li>
+              <li class="flex items-center text-off-black dark:text-off-white">
+                <span class="text-main mr-2">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </span>
+                Processeur: {{ plan.processor }}
+              </li>
+              <li class="flex items-center text-off-black dark:text-off-white">
+                <span class="text-main mr-2">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </span>
+                Traffic mensuel: {{ plan.traffic }}
+              </li>
+              <li class="flex items-center text-off-black dark:text-off-white">
+                <span class="text-main mr-2">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </span>
+                Support technique: {{ plan.support }}
+              </li>
+              <li *ngIf="plan.certificat_ssl" class="flex items-center text-off-black dark:text-off-white">
+                <span class="text-main mr-2">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </span>
+                Certificat SSL: {{ plan.certificat_ssl }}
+              </li>
+            </ul>
+          </div>
+          <button class="btn-main mt-6 w-full">
+            Choisissez cette Offre
+          </button>
+        </div>
+      </div>
+    </ng-container>
   </div>
-  
+</div>
