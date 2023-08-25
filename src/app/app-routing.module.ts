@@ -9,6 +9,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { SolutionsMateriellesComponent } from './pages/solutions-techniques/solutions-materielles/solutions-materielles.component';
+import { SolutionsLogiciellesComponent } from './pages/solutions-techniques/solutions-logicielles/solutions-logicielles.component';
 
 const routes: Routes = [
   {
@@ -22,6 +24,14 @@ const routes: Routes = [
   {
     path: 'Solutions-Techniques',
     component: SolutionsTechniquesComponent
+  },
+  {
+    path: 'Solutions-Logicielles',
+    component: SolutionsLogiciellesComponent
+  },
+  {
+    path: 'Solutions-Materielles',
+    component: SolutionsMateriellesComponent
   },
   {
     path: 'About',

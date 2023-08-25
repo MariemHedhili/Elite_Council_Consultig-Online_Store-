@@ -8,6 +8,9 @@
   .btn-main {
     @apply bg-main hover:bg-main-dark text-off-white font-semibold rounded-md py-3 px-5 text-base hover:drop-shadow-lg transition-all;
   }
+  .btn-scnd {
+    @apply hover:outline hover:outline-1 outline-main hover:bg-main-dark hover:bg-opacity-20 text-main font-semibold rounded-md py-3 px-5 text-base hover:drop-shadow-lg transition-all;
+  }
 }
 
 * {

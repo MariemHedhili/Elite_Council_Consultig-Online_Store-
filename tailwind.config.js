@@ -1,11 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  plugins: [
+    require('flowbite/plugin')
+  ],
   darkMode: 'class',
   variants: {
     display: ['responsive', 'group-hover', 'group-focus'],
    },
   content: [
     "./src/**/*.{html,ts}",
+    "./node_modules/flowbite/**/*.js",
   ],
   theme: {
     extend: {
@@ -22,6 +26,7 @@ module.exports = {
         'off-white-darker': '#eeeeee',
         'dark-mode-one': '#152642',
         'dark-mode-two': '#172b4a',
+        'dark-mode-three': '#1d3860',
       },
       transitionDuration: {
         '0': '0ms',

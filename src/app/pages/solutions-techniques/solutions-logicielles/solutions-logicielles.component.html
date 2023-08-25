@@ -1,1 +1,36 @@
-<p>test</p>
+<div class="py-20 bg-off-white dark:bg-dark-mode-two">
+    <div class="transition-all flex justify-center items-center pb-10 cursor-pointer">
+        <div class="transition-all flex items-center space-x-2">
+          <div
+            class="relative w-40 h-10 bg-off-white-darker dark:bg-dark-mode-one rounded-full px-1 flex items-center justify-start focus:outline-none"
+            (click)="togglePosition()"
+            [ngClass]="{
+              'justify-start': activePosition === 0,
+              'justify-center': activePosition === 1,
+              'justify-end': activePosition === 2
+            }"
+          >
+            <div
+              class="px-4 py-1 bg-white dark:bg-dark-mode-two rounded-full shadow"
+            >
+              <div class="text-off-black dark:text-off-white font-bold">
+                <span *ngIf="activePosition === 0">Web</span>
+                <span *ngIf="activePosition === 1">Cloud</span>
+                <span *ngIf="activePosition === 2">VPS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    
+    <div *ngIf="activePosition === 0">
+        <app-web></app-web>
+    </div>
+    <div *ngIf="activePosition === 1">
+        <app-cloud></app-cloud>
+    </div>
+    <div *ngIf="activePosition === 2">
+        <app-vps></app-vps>
+    </div>
+</div>

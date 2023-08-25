@@ -28,6 +28,10 @@ import { FormsModule } from '@angular/forms';
 import { DarkModeToggleComponent } from './components/dark-mode-toggle/dark-mode-toggle.component';
 import { AccordionsComponent } from './components/accordions/accordions.component';
 import { AccordionItemComponent } from './components/accordion-item/accordion-item.component';
+import { MultiLevelNavbarComponent } from './components/multi-level-navbar/multi-level-navbar.component';
+import { WebComponent } from './pages/solutions-techniques/solutions-logicielles/web/web.component';
+import { CloudComponent } from './pages/solutions-techniques/solutions-logicielles/cloud/cloud.component';
+import { VpsComponent } from './pages/solutions-techniques/solutions-logicielles/vps/vps.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +59,10 @@ import { AccordionItemComponent } from './components/accordion-item/accordion-it
     DarkModeToggleComponent,
     AccordionsComponent,
     AccordionItemComponent,
+    MultiLevelNavbarComponent,
+    WebComponent,
+    CloudComponent,
+    VpsComponent,
   ],
   imports: [
     BrowserModule,
