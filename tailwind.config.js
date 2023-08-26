@@ -43,10 +43,17 @@ module.exports = {
           '0%': { opacity: '1' },
           '100%': { opacity: '0' },
         },
+        infiniteSlider: {
+          "0%": { transform: "translateX(0)" },
+          "100%": {
+            transform: "translateX(calc(-250px * 5))",
+          },
+        },
       },
       animation: {
         fadeIn: 'fadeIn 400ms ease-in-out',
         fadeOut: 'fadeOut 400ms ease-in-out',
+        ["infinite-slider"]: "infiniteSlider 20s linear infinite",
       },
     },
   },

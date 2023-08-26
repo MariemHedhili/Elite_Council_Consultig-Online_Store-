@@ -32,6 +32,8 @@ import { MultiLevelNavbarComponent } from './components/multi-level-navbar/multi
 import { WebComponent } from './pages/solutions-techniques/solutions-materielles/web/web.component';
 import { CloudComponent } from './pages/solutions-techniques/solutions-materielles/cloud/cloud.component';
 import { VpsComponent } from './pages/solutions-techniques/solutions-materielles/vps/vps.component';
+import { TestimonialSliderComponent } from './components/testimonial-slider/testimonial-slider.component';
+import { ClientsComponent } from './components/clients/clients.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +65,8 @@ import { VpsComponent } from './pages/solutions-techniques/solutions-materielles
     WebComponent,
     CloudComponent,
     VpsComponent,
+    TestimonialSliderComponent,
+    ClientsComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,10 @@
+<div class="relative m-auto w-full overflow-hidden bg-off before:absolute before:left-0 before:top-0 before:z-[2] before:h-full before:w-[100px] before:bg-[linear-gradient(to_right,transparent_0%,rgba(255,255,255,0)_100%)] before:content-[''] after:absolute after:right-0 after:top-0 after:z-[2] after:h-full after:w-[100px] after:-scale-x-100 after:bg-[linear-gradient(to_right,transparent_0%,rgba(255,255,255,0)_100%)] dark: after:content-['']">
+    <div class="animate-infinite-slider flex w-[calc(250px*10)]">
+      <div *ngFor="let logo of logos" class="slide flex w-[125px] items-center justify-center">
+        <img [src]="logo" alt="Logo" class="mx-20 h-20">
+      </div>
+      <div *ngFor="let logo of logos" class="slide flex w-[125px] items-center justify-center">
+        <img [src]="logo" alt="Logo" class="mx-20 h-20">
+      </div>
+    </div>
+  </div>
